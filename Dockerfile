@@ -1,9 +1,9 @@
 FROM alpine
 
-COPY helloworld.sh /
-RUN chmod +x /helloworld.sh
+COPY entrypoint.sh /
+RUN chmod +x /entrypoint.sh
 
-CMD ["/helloworld.sh"]
+CMD ["/entrypoint.sh"]
 
 # RUN apk add -U --no-cache \
 #    openssh-server
