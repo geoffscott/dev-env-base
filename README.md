@@ -6,6 +6,12 @@ Remote terminal development environment container image: tmux, SSH, ZSH, neovim,
 
 Sets up a remote terminal development environment that can be run in a container service, like a Google Compute Engine VM, and accessed via SSH.
 
+Here's how it works:
+
+![GCP Development Environment Diagram] (https://docs.google.com/drawings/d/e/2PACX-1vTBKipEjbz2VFlT_V2myL3w5aUVU3xFPZxxteggBjKlFMH_4pZYZTY7Nq5b_TXRpyhJRzsCcbqRQgby/pub?w=960&h=720)
+
+## Dockerfile to Setup the Environment
+
 Start with a working openssh-server on Alpine
 
 https://github.com/danielguerra69/alpine-sshd
