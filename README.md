@@ -8,7 +8,7 @@ Sets up a remote terminal development environment that can be run in a container
 
 Here's how it works:
 
-![GCP Development Environment Diagram] (https://docs.google.com/drawings/d/e/2PACX-1vTBKipEjbz2VFlT_V2myL3w5aUVU3xFPZxxteggBjKlFMH_4pZYZTY7Nq5b_TXRpyhJRzsCcbqRQgby/pub?w=960&h=720)
+![GCP Development Environment Diagram](https://docs.google.com/drawings/d/e/2PACX-1vTBKipEjbz2VFlT_V2myL3w5aUVU3xFPZxxteggBjKlFMH_4pZYZTY7Nq5b_TXRpyhJRzsCcbqRQgby/pub?w=960&h=720)
 
 ## Dockerfile to Setup the Environment
 
