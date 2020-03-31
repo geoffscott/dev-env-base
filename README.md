@@ -20,6 +20,12 @@ If you want to run this, start by forking this repo and follow the setup steps b
 
 ## Google Cloud Platform Setup
 
+https://cloud.google.com/compute/docs/instances/managing-instance-access#add_oslogin_keys
+Enable the OS Login instance
+Grant the necessary IAM roles
+Create an SSH key pair
+Add custom SSH keys to user accounts
+
 Create a GCP account, enable billing
 Create a GCP project
 Add trigger to your repo on Github
