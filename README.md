@@ -22,8 +22,8 @@ If you want to run this, start by forking this repo and follow the setup steps b
 
 https://cloud.google.com/compute/docs/instances/managing-instance-access#add_oslogin_keys
 Enable the OS Login instance
-Grant the necessary IAM roles
-Create an SSH key pair
+Grant the necessary IAM roles - nothing to do here if you already have the Owner role.
+Create an SSH key pair - use Termius to do this
 Add custom SSH keys to user accounts
 
 Create a GCP account, enable billing
@@ -49,3 +49,24 @@ This will take you to Google Compute Engine and show the starting VM Instance th
 
 ssh to the running image
 reconnect to existing session using tmux
+
+## Managing SSH Keys
+
+To make things a little more interesting, I'm trying to setup my environment so that I can access it remotely via SSH from any device. So far, the only challenge I can find is generating and managing SSH keys. This is easy if you start with a Linux, Mac, or Windows machine, but I'm trying to do this from a Chrome OS machine without using Chrome OS's built-in Linux OS.
+
+To generate and manage SSH keys:
+
+* Termius is an SSH client that runs on multiple platforms, but it requires Chrome OS Linux to be enabled. It allows you to generate SSH keys and the commercial version securely synchronizes them across devices.
+* Userify is a cloud platform provider that allows you to generate and manage SSH keys. Appears to be legit, but not sure how secure it is. Needs a separate SSH client.
+* 
+
+## Install Termius on Chrome OS
+
+You can download and install the Android app on Chrome OS, but it doesn't appear to fully work. Instructions
+
+* enable Linux
+* open terminal
+$ wget https://www.termius.com/download/linux/Termius.deb
+$ sudo apt install ./Termius.deb
+$ termius-app
+
