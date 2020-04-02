@@ -4,7 +4,7 @@ Remote terminal development environment container image: tmux, SSH, ZSH, neovim,
 
 ## Introduction
 
-Sets up a remote terminal development environment that can be run in a container service, like a Google Compute Engine VM, and accessed via SSH.
+Sets up a remote terminal development environment that can be run in a container service, like a Google Compute Engine VM, and accessed via SSH (or Mosh).
 
 Here's how it works:
 
@@ -20,15 +20,10 @@ If you want to run this, start by forking this repo and follow the setup steps b
 
 ## Google Cloud Platform Setup
 
-https://cloud.google.com/compute/docs/instances/managing-instance-access#add_oslogin_keys
-Enable the OS Login instance
-Grant the necessary IAM roles - nothing to do here if you already have the Owner role.
-Create an SSH key pair - use Termius to do this
-Add custom SSH keys to user accounts
-
-Create a GCP account, enable billing
-Create a GCP project
-Add trigger to your repo on Github
+1. Create a GCP account, enable billing
+2. Create a GCP project (your account will be an Owner, so you won't need additional roles)
+3. Add trigger to your repo on Github
+4. Enable OS Login on your project https://cloud.google.com/compute/docs/instances/managing-instance-access#add_oslogin_keys
 
 ### Builds
 
@@ -45,28 +40,26 @@ Select 'Deploy to GCE'
 
 This will take you to Google Compute Engine and show the starting VM Instance that will run the development environment
 
-## Usage
+## Setup SSH Keys
+
+1. Install gcloud SDK on a local machine (only needed for step #6) https://gist.github.com/marcwjj/d86bc137a302b50d8c0f1b5af5fd19d5
+2. SSH into remote instance using gcloud command to generate an SSH key pair and associate the public key with your account
+3. Test your keys by connecting to the instance
 
 ssh to the running image
 reconnect to existing session using tmux
 
-## Managing SSH Keys
-
-To make things a little more interesting, I'm trying to setup my environment so that I can access it remotely via SSH from any device. So far, the only challenge I can find is generating and managing SSH keys. This is easy if you start with a Linux, Mac, or Windows machine, but I'm trying to do this from a Chrome OS machine without using Chrome OS's built-in Linux OS.
-
-To generate and manage SSH keys:
-
-* Termius is an SSH client that runs on multiple platforms, but it requires Chrome OS Linux to be enabled. It allows you to generate SSH keys and the commercial version securely synchronizes them across devices.
-* Userify is a cloud platform provider that allows you to generate and manage SSH keys. Appears to be legit, but not sure how secure it is. Needs a separate SSH client.
-* 
-
 ## Install Termius on Chrome OS
 
-You can download and install the Android app on Chrome OS, but it doesn't appear to fully work. Instructions
+You can download and install the Android app on Chrome OS, but it doesn't appear to fully work. Instead, enable Linux and install the .deb version.
 
 * enable Linux
 * open terminal
 $ wget https://www.termius.com/download/linux/Termius.deb
 $ sudo apt install ./Termius.deb
 $ termius-app
+
+Import the private SSH key generated above into Termius
+Create an Identity
+Create a Host
 
